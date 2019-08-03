@@ -1,4 +1,11 @@
+<div class="header">
+    <div class="container">
+        <h1>Online Radio App</h1>
+    </div>
+</div>
 <div class="container">
-    <h1>Hello world</h1>
-    <router-outlet></router-outlet>
+    <div [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+
 </div>

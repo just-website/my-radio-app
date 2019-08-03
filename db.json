@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "id": "1",
+      "name": "admin",
+      "password": "adminadmin",
+      "email": "admin@admin.com"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "2",
+      "name": "test",
+      "password": "test",
+      "email": "test"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
