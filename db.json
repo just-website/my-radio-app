@@ -11,6 +11,16 @@
       "name": "test",
       "password": "test",
       "email": "test"
+    },
+    {
+      "password": "123123123",
+      "email": "polosatyj.spb@yandex.ru",
+      "id": "Hmoe5rq"
+    },
+    {
+      "password": "123123123",
+      "email": "polosatyj.spb@gmail.com",
+      "id": "8Mk1AYg"
     }
   ]
 }

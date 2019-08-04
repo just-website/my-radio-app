@@ -4,7 +4,7 @@
     width: 480px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 2px;
@@ -21,8 +21,11 @@ h2 {
 .btn {
     background-color: $m-blue;
     color: $m-light-text;
-    &:hover {
+    &:not([disabled]):hover {
         color: rgba($m-light-text, .7);
+    }
+    &[disabled]:hover {
+        color: $m-light-text;
     }
 }
 

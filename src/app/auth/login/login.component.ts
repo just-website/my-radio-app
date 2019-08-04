@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ShowHideAnimation } from 'src/app/animations';
+import { ShowHideAnimation } from 'src/app/common/animations';
 import { UserService } from '../../common/services/user.service';
 import { User } from 'src/app/common/models/user.model';
 import { Message } from 'src/app/common/models/message.model';
+import { AuthorizeService } from 'src/app/common/services/authorize.service';
+import { MessageService } from 'src/app/common/services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +17,10 @@ import { Message } from 'src/app/common/models/message.model';
 export class LoginComponent implements OnInit {
 
   private loginForm: FormGroup;
-  private userData: User;
-  private message: Message = new Message('', '');
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private authorize: AuthorizeService,
+    private message: MessageService
   ) { }
 
   ngOnInit() {
@@ -32,34 +34,25 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit() {
-    this.checkAuthorize();
+    this.verifyAuthorize();
   }
 
-  private checkAuthorize() {
-    this.userService.getUserByEmail(this.loginForm.value.email).subscribe(data => {
-      if (!data) {
-        this.showMessage('Ошибка', 'Пользователь не найден');
-        return;
-      }
-      this.userData = data;
-      if (this.loginForm.controls['password'].value !== data.password) {
-        this.showMessage('Ошибка', 'Пароль введён не верно')
-      } else {
-        console.log('Успешная авторизация');
-
-      }
-    })
-  }
-
-
-  private showMessage(type, message) {
-    console.log('test ', type, message);
-
-    this.message = new Message(type, message);
-    const timer = window.setTimeout(() => {
-      this.message = new Message('', '');
-      window.clearTimeout(timer);
-    }, 3000)
+  private verifyAuthorize() {
+    const formData = this.loginForm.value;
+    this.userService.getUserByEmail(formData.email)
+      .subscribe(
+        result => {
+          if (formData.password !== result.password) {
+            this.message.showMessage('Ошибка', 'Пароль введён не верно')
+          } else {
+            console.log('Успешная авторизация');
+            this.authorize.login(result);
+          }
+        },
+        error => {
+          this.message.showMessage('Ошибка', error.message);
+        }
+      )
   }
 }
 

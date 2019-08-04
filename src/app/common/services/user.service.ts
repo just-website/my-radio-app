@@ -13,15 +13,25 @@ export class UserService {
         private http: HttpClient,
     ) { }
 
-    getUserByEmail<Data>(email): Observable<User> {
+    getUserByEmail(email): Observable<User> {
         return this.http.get<User>(`${url}?email=${email}`).pipe(
             map(users => {
-                if (users) {
+                if (users[0]) {
                     return users[0]
                 } else {
-                    return undefined
+                    throw new Error('Пользователь с таким email не найден')
                 }
             })
         );
     }
+
+    addUser(user: User): Observable<any> {
+        return this.http.post(url, user).pipe(
+            map((response: Response) => {
+                return response;
+            })
+        )
+    }
+
+
 }

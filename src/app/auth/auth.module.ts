@@ -8,12 +8,13 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AppCommonModule } from '../common/common.module';
 import { RestoreComponent } from './restore/restore.component';
 import { UserService } from '../common/services/user.service';
+import { MessageService } from '../common/services/message.service';
 
 
 @NgModule({
   declarations: [RegistrationComponent, LoginComponent, AuthComponent, RestoreComponent],
   imports: [CommonModule, AuthRoutingModule, AppCommonModule, HttpClientModule],
-  providers: [UserService]
+  providers: [UserService, MessageService]
 })
 
 export class AuthModule { }

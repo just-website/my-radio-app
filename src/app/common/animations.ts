@@ -3,7 +3,7 @@ import { trigger, animateChild, query, animate, group, style, transition, state 
 export const AuthAnimation = (triggerName) => {
     return trigger(triggerName, [
         transition('login <=> registration', [
-            style({ width: '100%' }),
+            style({ width: '100%', position: 'relative' }),
             query(':enter, :leave', [
                 style({
                     position: 'absolute',

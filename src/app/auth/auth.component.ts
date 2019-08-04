@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, RouterOutlet, ActivatedRoute } from '@angular/router';
-import { AuthAnimation } from '../animations';
+import { AuthAnimation } from '../common/animations';
 
 @Component({
     selector: 'app-auth',
