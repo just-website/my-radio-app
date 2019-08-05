@@ -5,27 +5,6 @@
       "name": "admin",
       "password": "00000000",
       "email": "admin@admin.com"
-    },
-    {
-      "id": "2",
-      "name": "test",
-      "password": "test",
-      "email": "test"
-    },
-    {
-      "password": "123123123",
-      "email": "polosatyj.spb@yandex.ru",
-      "id": "Hmoe5rq"
-    },
-    {
-      "password": "123123123",
-      "email": "polosatyj.spb@gmail.com",
-      "id": "8Mk1AYg"
-    },
-    {
-      "password": "111111111",
-      "email": "polosatyj.spb@gmail.com1",
-      "id": "TeXFNZF"
     }
   ]
 }
