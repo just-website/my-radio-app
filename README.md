@@ -9,9 +9,9 @@ Run `npm run dev` for a dev server. Navigate to `http://localhost:4200/` for bro
 
 ## Preview images
 
-![Authorization page](https://github.com/just-website/my-radio-app/blob/master/src/img/auth.jpg?raw=true "Authorization")
+![Authorization page](https://github.com/just-website/my-radio-app/blob/master/src/img/auth.jpg "Authorization")
 
-![Regitration page](https://github.com/just-website/my-radio-app/blob/master/src/img/regist.jpg?raw=true "Regitration")
+![Regitration page](https://github.com/just-website/my-radio-app/blob/master/src/img/regist.jpg "Regitration")
 
-![Restore password page](https://github.com/just-website/my-radio-app/blob/master/src/img/restore.jpg?raw=true "Restore")
+![Restore password page](https://github.com/just-website/my-radio-app/blob/master/src/img/restore.jpg "Restore")
 
