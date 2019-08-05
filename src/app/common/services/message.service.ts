@@ -6,7 +6,7 @@ import { Message } from '../models/message.model';
 export class MessageService {
     public data: Message = new Message('', '');
 
-    showMessage(type, message) {
+    showMessage(type, message, timeout?: number) {
         if (this.data.type !== '') {
             return;
         }
@@ -14,6 +14,6 @@ export class MessageService {
         const timer = window.setTimeout(() => {
             this.data = new Message('', '');
             window.clearTimeout(timer);
-        }, 3000)
+        }, timeout || 3000)
     }
 }

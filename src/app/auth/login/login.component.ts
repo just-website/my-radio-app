@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
           if (formData.password !== result.password) {
             this.message.showMessage('Ошибка', 'Пароль введён не верно')
           } else {
-            console.log('Успешная авторизация');
+            this.message.showMessage('Успех', 'Успешная авторизация')
             this.authorize.login(result);
           }
         },

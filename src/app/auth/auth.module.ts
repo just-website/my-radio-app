@@ -9,12 +9,13 @@ import { AppCommonModule } from '../common/common.module';
 import { RestoreComponent } from './restore/restore.component';
 import { UserService } from '../common/services/user.service';
 import { MessageService } from '../common/services/message.service';
+import { CustomValidator } from '../common/services/validator.service';
 
 
 @NgModule({
   declarations: [RegistrationComponent, LoginComponent, AuthComponent, RestoreComponent],
   imports: [CommonModule, AuthRoutingModule, AppCommonModule, HttpClientModule],
-  providers: [UserService, MessageService]
+  providers: [UserService, MessageService, CustomValidator]
 })
 
 export class AuthModule { }

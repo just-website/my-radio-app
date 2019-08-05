@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "admin",
-      "password": "adminadmin",
+      "password": "00000000",
       "email": "admin@admin.com"
     },
     {
@@ -21,6 +21,11 @@
       "password": "123123123",
       "email": "polosatyj.spb@gmail.com",
       "id": "8Mk1AYg"
+    },
+    {
+      "password": "111111111",
+      "email": "polosatyj.spb@gmail.com1",
+      "id": "TeXFNZF"
     }
   ]
 }
