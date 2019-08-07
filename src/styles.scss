@@ -10,7 +10,7 @@ $m-orange: #FF8F00;
 $m-dark-gray: #616161;
 $m-gray: #E0E0E0;
 $m-dark-text: #263238;
-$m-light-text: #ECEFF1;
+$m-light-text: #fbfbfb;
 
 body {
     margin: 0;
@@ -76,4 +76,11 @@ body {
     hr {
         border-top: 1px solid rgba($m-light-text, .5);
     }
+}
+
+.content-container {
+    position: absolute;
+    top: 78px;
+    left: 250px;
+    z-index: -1;
 }

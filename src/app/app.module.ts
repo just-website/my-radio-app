@@ -6,6 +6,7 @@ import { RoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthorizeService } from './common/services/authorize.service';
+import { MainModule } from './main/main.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,10 @@ import { AuthorizeService } from './common/services/authorize.service';
   ],
   imports: [
     BrowserModule,
-    AuthModule,
     RoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthModule,
+    MainModule
   ],
   providers: [
     AuthorizeService

@@ -6,6 +6,7 @@ import { User } from 'src/app/common/models/user.model';
 import { Message } from 'src/app/common/models/message.model';
 import { AuthorizeService } from 'src/app/common/services/authorize.service';
 import { MessageService } from 'src/app/common/services/message.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private authorize: AuthorizeService,
-    private message: MessageService
+    private message: MessageService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -47,6 +49,9 @@ export class LoginComponent implements OnInit {
           } else {
             this.message.showMessage('Успех', 'Успешная авторизация')
             this.authorize.login(result);
+            window.setTimeout(() => {
+              this.router.navigate(['/main']);
+            }, 1500)
           }
         },
         error => {
