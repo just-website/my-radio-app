@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
             this.message.showMessage('Успех', 'Успешная авторизация')
             this.authorize.login(result);
             window.setTimeout(() => {
-              this.router.navigate(['/main']);
+              this.router.navigate(['/main', 'title']);
             }, 1500)
           }
         },

@@ -22,7 +22,6 @@ export class MainHeaderComponent implements OnInit {
     this.setUserName();
     this.isAuthorize = this.authorize.isAuthorize();
     console.log(this.isAuthorize);
-
   }
 
   logout() {

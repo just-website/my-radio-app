@@ -26,6 +26,30 @@ export const AuthAnimation = (triggerName) => {
             ]),
             query(':enter', animateChild()),
         ]),
+        transition('login <=> login', [
+            style({ width: '100%', position: 'relative' }),
+            query(':enter, :leave', [
+                style({
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%'
+                })
+            ]),
+            query(':enter', [
+                style({ opacity: '0' })
+            ]),
+            query(':leave', animateChild()),
+            group([
+                query(':leave', [
+                    animate('600ms ease-out', style({ opacity: '0', width: '100%' }))
+                ]),
+                query(':enter', [
+                    animate('600ms  300ms ease-out', style({ opacity: '1' }))
+                ])
+            ]),
+            query(':enter', animateChild()),
+        ]),
 
     ]);
 }

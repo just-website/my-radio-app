@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthorizeService } from './common/services/authorize.service';
 import { MainModule } from './main/main.module';
+import { UrlService } from './common/services/url.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainModule } from './main/main.module';
     MainModule
   ],
   providers: [
-    AuthorizeService
+    AuthorizeService,
+    UrlService
   ],
   bootstrap: [AppComponent]
 })

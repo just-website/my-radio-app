@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { PopularComponent } from './popular/popular.component';
 import { ToggleActiveDirective } from '../common/directives/toggleActive.directive';
+import { CardItemComponent } from './card-item/card-item.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { ToggleActiveDirective } from '../common/directives/toggleActive.directi
         MainHeaderComponent,
         HomeComponent,
         PopularComponent,
-        ToggleActiveDirective
+        ToggleActiveDirective,
+        CardItemComponent
     ],
     imports: [
         CommonModule,

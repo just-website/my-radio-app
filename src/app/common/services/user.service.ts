@@ -3,18 +3,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UrlService } from './url.service';
 
 const url = 'http://localhost:4000/users'
 
 @Injectable()
-export class UserService {
+export class UserService extends UrlService {
     private user: User;
     constructor(
-        private http: HttpClient,
-    ) { }
+        public http: HttpClient,
+    ) {
+        super(http);
+    }
 
     getUserByEmail(email): Observable<User> {
-        return this.http.get<User>(`${url}?email=${email}`).pipe(
+        return this.get(`users?email=${email}`).pipe(
             map(users => {
                 if (users[0]) {
                     return users[0]
@@ -26,11 +29,7 @@ export class UserService {
     }
 
     addUser(user: User): Observable<any> {
-        return this.http.post(url, user).pipe(
-            map((response: Response) => {
-                return response;
-            })
-        )
+        return this.post('users', user)
     }
 
 }

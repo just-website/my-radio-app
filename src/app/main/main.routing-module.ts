@@ -6,9 +6,9 @@ import { PopularComponent } from './popular/popular.component';
 
 const routes = [
     {
-        path: '', component: MainComponent, children: [
-            { path: 'main', component: HomeComponent },
-            { path: 'popular', component: PopularComponent },
+        path: 'main', component: MainComponent, children: [
+            { path: 'title', component: HomeComponent, data: { animation: 'login' } },
+            { path: 'popular', component: PopularComponent, data: { animation: 'registration' } },
         ]
     }
 ]

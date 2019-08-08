@@ -1,7 +1,7 @@
 <div class="main-menu">
     <div class="container">
         <ul class="nav flex-column">
-            <li class="nav-item" routerLink="/main" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            <li class="nav-item" [routerLink]="['/main/title']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
 true}">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"
@@ -29,7 +29,7 @@ true}">
                 </div>
                 <a class="nav-link">Недавнее</a>
             </li>
-            <li class="nav-item" routerLink="/popular" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            <li class="nav-item" [routerLink]="['/main/popular']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
 true}">
                 <div class="icon">
                     <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"
